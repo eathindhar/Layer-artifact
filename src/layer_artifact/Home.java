@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -18,32 +19,16 @@ public class Home implements ActionListener {
 	JFrame f;
 	JPanel p1,p2;
 	JButton b1,b2,b3;
-	JButton create,read,replace,delete;
-	JLabel layer,agroup,artifact;
-	JTextField t1,t2,t3;
-	JButton submit;
+	
 	
 	Home(){
 		f = new JFrame();
 		p1 = new JPanel();
 		p2 = new JPanel();
-		b1 = new JButton("Presentation");
+		b1 = new JButton("LAYER");
 		b2 = new JButton("Artifact Group");
 		b3 = new JButton("Artifact");
-		create = new JButton("Create");
-		read = new JButton("Read");
-		replace = new JButton("Replace");
-		delete = new JButton("Delete");
 		
-		layer = new JLabel("Enter Layer Name:");
-		agroup = new JLabel("Enter Artifact Group Name:");
-		artifact = new JLabel("Enter Artifat Name:");
-		
-		t1 = new JTextField();
-		t2 = new JTextField();
-		t3 = new JTextField();
-		
-		submit = new JButton("Submit");
 		
 	}
 	
@@ -74,49 +59,7 @@ public class Home implements ActionListener {
 		p2.setLayout(null);
 		f.add(p2);
 		
-		create.setBounds(30,50,80,30);
-		//create.setVisible(false);
-		p2.add(create);
 		
-		read.setBounds(130, 50, 80, 30);
-		//read.setVisible(false);
-		p2.add(read);
-		
-		replace.setBounds(230, 50, 80, 30);
-		//replace.setVisible(false);
-		p2.add(replace);
-		
-		delete.setBounds(350, 50, 80, 30);
-		//delete.setVisible(false);
-		p2.add(delete);
-		
-		layer.setBounds(30, 100, 120, 30);
-		layer.setVisible(false);
-		p2.add(layer);
-		
-		t1.setBounds(165, 100, 120, 30);
-		t1.setVisible(false);
-		p2.add(t1);
-		
-		agroup.setBounds(30, 150, 120, 30);
-		agroup.setVisible(false);
-		p2.add(agroup);
-		
-		t2.setBounds(165, 150, 120, 30);
-		t2.setVisible(false);
-		p2.add(t2);
-		
-		artifact.setBounds(30, 210, 120, 30);
-		artifact.setVisible(false);
-		p2.add(artifact);
-		
-		t3.setBounds(165, 210, 120, 30);
-		t3.setVisible(false);
-		p2.add(t3);
-		
-		submit.setBounds(80,260,80,30);
-		submit.setVisible(false);
-		p2.add(submit);
 		
 		
 		b1.addActionListener(this);
@@ -130,6 +73,9 @@ public class Home implements ActionListener {
 		// TODO Auto-generated method stub
 		if(e.getSource()==b1){
 			p2.setVisible(true);
+			f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
+			Presentation pas = new Presentation();
+			pas.dis();
 			
 		}
 		

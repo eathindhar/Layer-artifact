@@ -11,7 +11,6 @@ public class Main {
 	public static void main(String args[]) throws SQLException, ClassNotFoundException{
 		
 		Class.forName("com.mysql.jdbc.Driver");  
-		
 		Connection con=DriverManager.getConnection(  "jdbc:mysql://localhost:3306/lay_at","root","root"); 
 		
 		DatabaseMetaData dbm = con.getMetaData();
